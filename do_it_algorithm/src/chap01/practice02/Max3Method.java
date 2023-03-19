@@ -1,4 +1,4 @@
-package chap01.practice01_02;
+package chap01.practice02;
 
 public class Max3Method {
 

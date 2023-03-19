@@ -1,8 +1,8 @@
-package chap01.practice01_04;
+package chap01.practice05;
 
 import java.util.Scanner;
 
-public class JudgeABC1 {
+public class JudgeABC2 {
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
 
@@ -13,7 +13,8 @@ public class JudgeABC1 {
             System.out.println("A");
         else if (n == 2)
             System.out.println("B");
-        else
-            System.out.println("C");
+        else if(n == 3) {
+        	System.out.println("C");        	
+        }
 	}
 }
