@@ -3,10 +3,16 @@ package chap01.exercise10;
 import java.util.Scanner;
 
 public class Task {
+	
 //	양의 정수를 입력하고 자릿수를 출력하는 프로그램을 작성하세요.
 //	예를 들어 135를 입력하면 '그 수는 3자리입니다.'라고 출력하고,
 //	1314를 입력하면 '그 수는 4자리 입니다.'라고 출력합니다.
+	
 	public static void main(String[] args) {
+		
+//		[결론]
+//		반복이 진행되면서 연산의 결과를 누적 시킬 수 있는지 생각한다.
+		
 //		13 / 1 = 13
 //		13 / 10 = 1
 //		13 / 100 = 0
@@ -28,10 +34,7 @@ public class Task {
 			}
 			
 			multipleCount++;
-		}
-		
-//		[개선점]
-//		변수의 사용을 최소화 한다.		
+		}	
 		
 //		[답안 코드]
 //		Scanner scan = new Scanner(System.in);

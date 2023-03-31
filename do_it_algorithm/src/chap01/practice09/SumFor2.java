@@ -2,8 +2,11 @@ package chap01.practice09;
 
 import java.util.Scanner;
 
-// 양수만 입력하여 1, 2, ..., n의 합을 구함
 public class SumFor2 {
+	
+//	양수만 입력하여 1, 2, ..., n의 합을 구함
+//	(do -while문을 사용한다.)
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int sum = 0, n = 0;

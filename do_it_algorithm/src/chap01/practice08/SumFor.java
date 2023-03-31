@@ -3,6 +3,9 @@ package chap01.practice08;
 import java.util.Scanner;
 
 public class SumFor {
+	
+//	1부터 n까지 정수의 합을 for문으로 구하는 프로그램을 작성하시오.
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int sum = 0;
