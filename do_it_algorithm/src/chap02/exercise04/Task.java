@@ -1,14 +1,26 @@
 package chap02.exercise04;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task {
 
 //	배열 b의 모든 요소를 배열 a에 복사하는 메서드 copy를 작성하세요.
+//	배열 a의 길이 < 배열 b의 길이 : 배열 a의 앞쪽 부터 배열 b의 요소를 복사하되 공간이 부족하면 배열 b의 나머지 요소는 담지 않는다.
+//	배열 a의 길이 > 배열 b의 길이 : 배열 a의 앞쪽 부터 배열 b의 요소를 복사하고 배열 a의 남는 공간은 배열 a의 원본 요소를 지닌다.
 //	static void copy(int[] a, int[] b)
 
 //	[실행 결과]
+//	a의 요솟수는: 2
+//	a[0]: 1
+//	a[1]: 2
+//	b의 요솟수는: 3
+//	b[0]: 3
+//	b[1]: 4
+//	b[2]: 5
+//	배열 b의 모든 요소를 배열 a에 copy하였습니다.
+//	a[0]: 3
+//	a[1]: 4
+	
 //	a의 요솟수는: 3
 //	a[0]: 1
 //	a[1]: 2
@@ -17,41 +29,28 @@ public class Task {
 //	b[0]: 4
 //	b[1]: 5
 //	배열 b의 모든 요소를 배열 a에 copy하였습니다.
-//	a[0]: 1
-//	a[1]: 2
-//	a[2]: 3
-//	a[3]: 4
-//	a[4]: 5
+//	a[0]: 4
+//	a[1]: 5
+//	a[1]: 3
 	
-//	[알고리즘]
-//	void copy(int[] a, int[] b) {
-//		int[] temp = new int[a.length + b.length] 
-//		i: 0 1 a.length
-//			temp[i] = a[i]
-//		i: 0 1 b.length
-//			temp[i + a.length] = b[i]
-//		a = temp
-//	}
-	
-//	배열은 길이가 달라지면 새로운 배열 객체를 생성해야한다.
-//	?? 반복문을 돌리지 않고도 2개의 배열을 붙이는 방법은 없나 ??
-	
+//	[순서도]
+//	<void copy(int[] a, int[] b)>
+//	만약 a.length <= b.length
+//		true 일 경우
+//			a.length -> copiedArrayLength
+//		false 일 경우
+//			b.length -1 -> copiedArrayLength
+//	반복 i: 0, 1, copiedArrayLength
+//		b[i] -> a[i]
 	public static void copy(int[] a, int[] b) {
 		
-		int[] temp = new int[a.length + b.length];
+		int copiedArrayLength = 0;
 		
-		for (int i = 0; i < a.length; i++) {
-			temp[i] = a[i];
+		copiedArrayLength = a.length <= b.length ? a.length : b.length;
+		
+		for (int i = 0; i < copiedArrayLength; i++) {
+			a[i] = b[i];
 		}
-		
-		for (int i = 0; i < b.length; i++) {
-			temp[i + a.length] = b[i];
-		}
-		
-		a = temp;
-//		a = new int[a.length + b.length];
-//		a = temp;
-
 	}
 	
 	public static void main(String[] args) {
@@ -80,17 +79,13 @@ public class Task {
 			b[i] = scan.nextInt();
 		}
 		
-		System.out.println(Arrays.toString(a));
-		
 		copy(a, b);
+				
+		System.out.println("배열 b의 모든 요소를 배열 a에 copy하였습니다.");
 		
-		System.out.println(Arrays.toString(a));
-//		System.out.println("배열 b의 모든 요소를 배열 a에 copy하였습니다.");
-//		
-//		for (int i = 0; i < a.length; i++) {
-//			System.out.print("a[" + i + "]: " + a[i]);
-//		}
-		
+		for (int i = 0; i < a.length; i++) {
+			System.out.println("a[" + i + "]: " + a[i]);
+		}
 		
 	}
 
