@@ -126,4 +126,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,java,eclipse
-./do_it_algorithm/src/solution/*
+solution/
